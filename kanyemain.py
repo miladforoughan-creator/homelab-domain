@@ -26,4 +26,4 @@ with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
     connection.login(user=EMAIL, password=PASSWORD)
     connection.sendmail(from_addr=EMAIL, to_addrs=[RECIPIENT1, RECIPIENT2],
-                        msg=f"Subject: And so said Kanye...\n\n {quote}")
+                        msg=f"Subject: And so said Kanye💩...\n\n {quote}")
