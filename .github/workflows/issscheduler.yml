@@ -46,4 +46,6 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           MY_LAT: ${{ secrets.MY_LAT }}
           MY_LON : ${{ secrets.MY_LON }}
+          RECIPIENT1: ${{ vars.RECIPIENT1 }}
+          RECIPIENT2: ${{ vars.RECIPIENT2 }}
         run: python ISSmain.py
