@@ -7,8 +7,8 @@ import os
 
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
-MY_LAT = int(os.environ.get("MY_LAT"))
-MY_LON =  int(os.environ.get("MY_LON"))
+MY_LAT = os.environ.get("MY_LAT")
+MY_LON =  os.environ.get("MY_LON")
 
 def is_iss_above():
     with requests.get("http://api.open-notify.org/iss-now.json") as iss_response:
@@ -21,7 +21,7 @@ def is_iss_above():
         print(iss_lat)
         print(iss_lon)
     # return iss_lat, iss_lon
-    if MY_LAT-5 <= iss_lat <= MY_LAT+5 and MY_LON-5 <= iss_lon <= MY_LON+5:
+    if int(MY_LAT)-5 <= iss_lat <= int(MY_LAT)+5 and int(MY_LON)-5 <= iss_lon <= int(MY_LON)+5:
         return True
 
 
