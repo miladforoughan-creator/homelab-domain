@@ -9,6 +9,8 @@ EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
 MY_LAT = os.environ.get("MY_LAT")
 MY_LON =  os.environ.get("MY_LON")
+RECIPIENT1 = os.environ.get("RECIPIENT1")
+RECIPIENT2 = os.environ.get("RECIPIENT2")
 
 def is_iss_above():
     with requests.get("http://api.open-notify.org/iss-now.json") as iss_response:
@@ -49,7 +51,7 @@ def send_email():
     with smtplib.SMTP('smtp.gmail.com', 587) as connection:
         connection.starttls()
         connection.login(user=EMAIL, password=PASSWORD)
-        connection.sendmail(from_addr=EMAIL, to_addrs=["milad.foroughan@gmail.com", "naz.rahnama@gmail.com"],
+        connection.sendmail(from_addr=EMAIL, to_addrs=[RECIPIENT1, RECIPIENT2],
                             msg=f"Subject: Look UP!\n\n ISS Is Now Passing Right Above Your Head...")
 
 is_it_dark()
