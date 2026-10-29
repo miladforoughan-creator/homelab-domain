@@ -21,7 +21,7 @@ def is_iss_above():
         print(iss_lat)
         print(iss_lon)
     # return iss_lat, iss_lon
-    if int(MY_LAT)-5 <= iss_lat <= int(MY_LAT)+5 and int(MY_LON)-5 <= iss_lon <= int(MY_LON)+5:
+    if float(MY_LAT)-5 <= iss_lat <= float(MY_LAT)+5 and float(MY_LON)-5 <= iss_lon <= float(MY_LON)+5:
         return True
 
 
