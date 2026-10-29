@@ -7,8 +7,8 @@ import os
 
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
-MY_LAT = os.environ.get("MY_LAT")
-MY_LON =  os.environ.get("MY_LON")
+MY_LAT = int(os.environ.get("MY_LAT"))
+MY_LON =  int(os.environ.get("MY_LON"))
 
 def is_iss_above():
     with requests.get("http://api.open-notify.org/iss-now.json") as iss_response:
