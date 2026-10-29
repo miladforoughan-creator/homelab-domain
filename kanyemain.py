@@ -5,6 +5,8 @@ import os
 
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
+RECIPIENT1 = os.environ.get("RECIPIENT1")
+RECIPIENT2 = os.environ.get("RECIPIENT2")
 
 with requests.get("https://api.kanye.rest/") as response:
     data = response.json()
@@ -23,5 +25,5 @@ with requests.get("https://api.kanye.rest/") as response:
 with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
     connection.login(user=EMAIL, password=PASSWORD)
-    connection.sendmail(from_addr=EMAIL, to_addrs=["milad.foroughan@gmail.com"],
+    connection.sendmail(from_addr=EMAIL, to_addrs=[RECIPIENT1, RECIPIENT2],
                         msg=f"Subject: And so said Kanye...\n\n {quote}")
