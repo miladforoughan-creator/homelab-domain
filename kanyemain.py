@@ -23,5 +23,5 @@ with requests.get("https://api.kanye.rest/") as response:
 with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
     connection.login(user=EMAIL, password=PASSWORD)
-    connection.sendmail(from_addr=email, to_addrs=["milad.foroughan@gmail.com"],
+    connection.sendmail(from_addr=EMAIL, to_addrs=["milad.foroughan@gmail.com"],
                         msg=f"Subject: And so said Kanye...\n\n {quote}")
