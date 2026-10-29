@@ -44,4 +44,6 @@ jobs:
           # Add more secrets in Settings > Secrets > Actions
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          RECIPIENT1: ${{ variables.RECIPIENT1 }}
+          RECIPIENT2: ${{ variables.RECIPIENT2 }}
         run: python kanyemain.py
