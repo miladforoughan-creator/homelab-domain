@@ -1,6 +1,7 @@
 import json
 import smtplib
 import requests
+import os
 
 EMAIL = os.environ.get("EMAIL")
 PASSWORD = os.environ.get("PASSWORD")
