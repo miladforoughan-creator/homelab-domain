@@ -1,1 +1,3 @@
 requests
+from google import genai
+from email.message import EmailMessage
