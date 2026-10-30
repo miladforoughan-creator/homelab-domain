@@ -14,7 +14,7 @@ on:
     # ║                                                                ║
     # ║  Use https://time.is/UTC to find your local time in UTC       ║
     # ╚═══════════════════════════════════════════════════════════════╝
-    - cron: '33 18 * * *'
+    - cron: '33 05 * * *'
 
   # This adds a "Run workflow" button so you can test manually
   workflow_dispatch:
@@ -49,5 +49,5 @@ jobs:
           APPID: ${{ secrets.APIDD }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RECIPIENT1: ${{ vars.RECIPIENT1 }}
-          # RECIPIENT2: ${{ vars.RECIPIENT2 }}
+          RECIPIENT2: ${{ vars.RECIPIENT2 }}
         run: python WeatherForecastZurichFa.py
