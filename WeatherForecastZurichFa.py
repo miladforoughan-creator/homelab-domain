@@ -16,6 +16,8 @@ PARAMS = {
     "gemini_api_key" : os.environ.get("GEMINI_API_KEY"),
 }
 
+RECIPIENT1 = os.environ.get("RECIPIENT1")
+RECIPIENT2 = os.environ.get("RECIPIENT2")
 
 #with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS["openweathermap"]) as api_response:
   #with open ("response.json", "w") as weather_file:
