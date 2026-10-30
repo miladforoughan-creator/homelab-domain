@@ -13,7 +13,7 @@ PARAMS = {
     "lon": 8.558962,
     "units" : "metric",
     "cnt" : 5},
-    "gemini_api_key" : os.environ.get("gemini_api_key"),
+    "gemini_api_key" : os.environ.get("GEMINI_API_KEY"),
 }
 
 
