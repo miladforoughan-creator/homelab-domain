@@ -40,7 +40,7 @@ print(interaction.output_text)
 
 sender_email = os.environ.get("EMAIL")
 app_password = os.environ.get("PASSWORD")
-recipients = RECIPIENT1
+recipients = [RECIPIENT1, RECIPIENT2]
 
 gemini_response = completion
 
