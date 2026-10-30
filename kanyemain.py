@@ -11,16 +11,16 @@ RECIPIENT2 = os.environ.get("RECIPIENT2")
 with requests.get("https://api.kanye.rest/") as response:
     data = response.json()
     quote = data.get('quote')
-    with open("kanye.json", "r") as file:
-        try:
+    try:
+        with open("kanye.json", "r") as file:
             data = json.load(file)
             data.update({"quote": f"updated as {quote}"})
-        except:
-            with open("kanye.json", "w") as file:
-                json.dump(data, file)
-        else:
-            with open("kanye.json", "w") as file:
-                json.dump(data, file)
+    except:
+        with open("kanye.json", "w") as file:
+            json.dump(data, file)
+    else:
+        with open("kanye.json", "w") as file:
+            json.dump(data, file)
 print(quote)
 with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
