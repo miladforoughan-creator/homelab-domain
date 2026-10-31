@@ -7,12 +7,11 @@ from email.message import EmailMessage
 
 
 PARAMS = {
-  "openweathermap": {
     "appid" : os.environ.get("APPID"),
     "lat": 47.376696,
     "lon": 8.558962,
     "units" : "metric",
-    "cnt" : 5},
+    "cnt" : 5,
     "gemini_api_key" : os.environ.get("GEMINI_API_KEY"),
 }
 
