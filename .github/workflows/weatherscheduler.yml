@@ -46,7 +46,7 @@ jobs:
           # Add more secrets in Settings > Secrets > Actions
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          APPID: ${{ secrets.APIDD }}
+          APPID: ${{ secrets.APPID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RECIPIENT1: ${{ vars.RECIPIENT1 }}
           RECIPIENT2: ${{ vars.RECIPIENT2 }}
