@@ -6,7 +6,7 @@ from google import genai
 from email.message import EmailMessage
 
 
-PARAMS = {
+PARAMS_OWM = {
     "appid" : os.environ.get("APPID"),
     "lat": 47.376696,
     "lon": 8.558962,
@@ -14,11 +14,10 @@ PARAMS = {
     "cnt" : 5,
     "gemini_api_key" : os.environ.get("GEMINI_API_KEY"),
 }
-
 RECIPIENT1 = os.environ.get("RECIPIENT1")
 RECIPIENT2 = os.environ.get("RECIPIENT2")
 
-#with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS["openweathermap"]) as api_response:
+#with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS) as api_response:
   #with open ("response.json", "w") as weather_file:
     #json.dump(api_response.json(), weather_file, indent=4)
 response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS)
