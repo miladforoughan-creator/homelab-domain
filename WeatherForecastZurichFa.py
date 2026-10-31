@@ -6,7 +6,7 @@ from google import genai
 from email.message import EmailMessage
 
 
-PARAMS_OWM = {
+PARAMS = {
     "appid" : os.environ.get("APPID"),
     "lat": 47.376696,
     "lon": 8.558962,
@@ -14,6 +14,7 @@ PARAMS_OWM = {
     "cnt" : 5,
     "gemini_api_key" : os.environ.get("GEMINI_API_KEY"),
 }
+
 RECIPIENT1 = os.environ.get("RECIPIENT1")
 RECIPIENT2 = os.environ.get("RECIPIENT2")
 
