@@ -17,18 +17,20 @@ PARAMS = {
 
 RECIPIENT1 = os.environ.get("RECIPIENT1")
 RECIPIENT2 = os.environ.get("RECIPIENT2")
+gemini_input = os.environ.get("GEMENI_INPUT")
 
 #with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS) as api_response:
   #with open ("response.json", "w") as weather_file:
     #json.dump(api_response.json(), weather_file, indent=4)
 response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS)
 weather_data = response.json()
-prompt = (f"Use weather data available in {weather_data} and generate a short clothing recommendation in Gilaki (Rashti) dialect and html format. "
-          f"the response.json file includes 5-day forecast. generate recommendation only "
-          f"for the same date this prompt is being sent over. Use Farsi language and RTL format to generate the html response. "
-          f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
-          f" use TiVasee Youtube channel character Maman Poori مامان پوری to carry the expressions suiting the forecast sentiment.")
-
+description = response.json()["list"][0]["weather"][0]["description"]
+# prompt = (f"Use weather data available in {weather_data} and generate a short clothing recommendation in Gilaki (Rashti) dialect and html format. "
+#           f"the response.json file includes 5-day forecast. generate recommendation only "
+#           f"for the same date this prompt is being sent over. Use Farsi language and RTL format to generate the html response. "
+#           f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
+#           f" use TiVasee Youtube channel character Maman Poori مامان پوری to carry the expressions suiting the forecast sentiment.")
+prompt = gemini_input
 client = genai.Client(api_key= PARAMS["gemini_api_key"])
 interaction = client.interactions.create(
     model="gemini-3.8-flash",
@@ -44,7 +46,7 @@ recipients = [RECIPIENT1, RECIPIENT2]
 gemini_response = completion
 
 msg = EmailMessage()
-msg["Subject"] = "پیش‌بینی هوا با مامان پوری🌤️"
+msg["Subject"] =  f"پیش‌بینی هوا با مامان پوری🌤️ | {description}"
 msg["From"] = sender_email
 msg["To"] = recipients
 msg.set_content(gemini_response, subtype="html")
