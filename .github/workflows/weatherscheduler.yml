@@ -50,4 +50,5 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RECIPIENT1: ${{ vars.RECIPIENT1 }}
           RECIPIENT2: ${{ vars.RECIPIENT2 }}
+          GEMENI_INPUT: ${{ vars.GEMENI_INPUT }}
         run: python WeatherForecastZurichFa.py
