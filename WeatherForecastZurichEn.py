@@ -20,9 +20,8 @@ PARAMS_GEM = {
 
 RECIPIENT1 = os.environ.get("RECIPIENT1")
 RECIPIENT2 = os.environ.get("RECIPIENT2")
-gemini_input = os.environ.get("GEMENI_INPUT")
 
-#with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS) as api_response:
+#with requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS_OWM) as api_response:
   #with open ("response.json", "w") as weather_file:
     #json.dump(api_response.json(), weather_file, indent=4)
 response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS_OWM)
@@ -33,7 +32,7 @@ prompt = (f"Use weather data available in {weather_data} and generate a short cl
           f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
           f"be short, concise, clear and to the point with your recommendations and generate an image that mirros the forecast sentiments."
           f"embed that image into the html reponse to improve the visuals of the message.")
-client = genai.Client(api_key= PARAMS_GEM)
+client = genai.Client(api_key=PARAMS_GEM)
 interaction = client.interactions.create(
     model="gemini-3.8-flash",
     input= prompt
