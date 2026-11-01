@@ -25,11 +25,7 @@ gemini_input = os.environ.get("GEMENI_INPUT")
 response = requests.get("https://api.openweathermap.org/data/2.5/forecast", params=PARAMS)
 weather_data = response.json()
 description = response.json()["list"][0]["weather"][0]["description"]
-# prompt = (f"Use weather data available in {weather_data} and generate a short clothing recommendation in Gilaki (Rashti) dialect and html format. "
-#           f"the response.json file includes 5-day forecast. generate recommendation only "
-#           f"for the same date this prompt is being sent over. Use Farsi language and RTL format to generate the html response. "
-#           f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
-#           f" use TiVasee Youtube channel character Maman Poori مامان پوری to carry the expressions suiting the forecast sentiment.")
+
 prompt = gemini_input
 client = genai.Client(api_key= PARAMS["gemini_api_key"])
 interaction = client.interactions.create(
