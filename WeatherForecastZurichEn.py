@@ -32,7 +32,7 @@ prompt = (f"Use weather data available in {weather_data} and generate a short cl
           f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
           f"be short, concise, clear and to the point with your recommendations and generate an image that mirros the forecast sentiments."
           f"embed that image into the html reponse to improve the visuals of the message.")
-client = genai.Client(api_key=PARAMS_GEM)
+client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
 interaction = client.interactions.create(
     model="gemini-3.8-flash",
     input= prompt
