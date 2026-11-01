@@ -39,7 +39,7 @@ interaction = client.interactions.create(
     input= prompt
 )
 completion = interaction.output_text
-print(interaction.output_text)
+print(completion)
 
 sender_email = os.environ.get("EMAIL")
 app_password = os.environ.get("PASSWORD")
