@@ -46,12 +46,12 @@ client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
 #             )
 #         ),
 #     )
-    interaction = client.interactions.create(
-        model="gemini-3.8-flash",
-        input= prompt
-    )
-    completion = interaction.output_text
-    print(completion)
+interaction = client.interactions.create(
+    model="gemini-3.8-flash",
+    input= prompt
+)
+completion = interaction.output_text
+print(completion)
 except Exception as e:
     print(f"An error occurred: {e}")
     
