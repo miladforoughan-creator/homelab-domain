@@ -49,8 +49,7 @@ try:
         model="gemini-3.8-flash",
         input= prompt
     )
-except:
-    except Exception as e:
+except Exception as e:
     print(f"An error occurred: {e}")
 completion = interaction.output_text
 print(completion)
