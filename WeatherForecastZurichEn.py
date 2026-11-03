@@ -41,7 +41,7 @@ client = genai.Client(
             initial_delay=2,
             attempts=3,
             backoff_factor=2,
-            http_status_forcelist=[429, 500, 502, 503, 504],
+            http_status_codes=[429, 500, 502, 503, 504],
         )
     ),
 )
