@@ -33,19 +33,19 @@ prompt = (f"Use weather data available in {weather_data} and generate a short cl
           f"output HTML markup (<p>, <ul>, <li>, <strong>, etc.) to avoid markdown code blocks like ```html."
           f"be short, concise, clear and to the point with your recommendations and generate a funny graphic that mirros the forecast sentiments."
           f"embed that graphic into the html reponse to improve the visuals of the message.")
-# client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
-try:
-    client = genai.Client(
-        api_key= PARAMS_GEM["gemini_api_key"],
-        http_options= types.HttpOptions(
-            retry_options=types.HttpRetryOptions(
-                initial_delay=2.0,
-                attempts=4,
-                # exp_base=2.0,
-                http_status_codes=[429, 500, 502, 503, 504],
-            )
-        ),
-    )
+client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
+# try:
+#     client = genai.Client(
+#         api_key= PARAMS_GEM["gemini_api_key"],
+#         http_options= types.HttpOptions(
+#             retry_options=types.HttpRetryOptions(
+#                 initial_delay=2.0,
+#                 attempts=4,
+#                 # exp_base=2.0,
+#                 http_status_codes=[429, 500, 502, 503, 504],
+#             )
+#         ),
+#     )
     interaction = client.interactions.create(
         model="gemini-3.8-flash",
         input= prompt
