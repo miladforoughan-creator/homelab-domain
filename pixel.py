@@ -1,5 +1,6 @@
 import datetime as dt
 import requests
+import os
 
 graph_config_params = {
     "id": "mygraph1",
