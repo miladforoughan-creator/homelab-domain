@@ -9,7 +9,7 @@ graph_config_params = {
     "color": "sora",
 }
 
-TOKEN = "ntqc3typdxm43xp,qz"
+TOKEN = os.environ.get("TOKEN")
 USERNAME = "milad8600"
 endpoint = "https://pixe.la/v1/users"
 graph_endpoint = f"{endpoint}/{USERNAME}/graphs/{graph_config_params['id']}"
