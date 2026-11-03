@@ -34,20 +34,24 @@ prompt = (f"Use weather data available in {weather_data} and generate a short cl
           f"be short, concise, clear and to the point with your recommendations and generate a funny graphic that mirros the forecast sentiments."
           f"embed that graphic into the html reponse to improve the visuals of the message.")
 # client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
-client = genai.Client(
-    api_key= PARAMS_GEM["gemini_api_key"],
-    http_options= types.HttpOptions(
-        retry_options=types.HttpRetryOptions(
-            initial_delay=2,
-            attempts=3,
-            http_status_codes=[429, 500, 502, 503, 504],
-        )
-    ),
-)
-interaction = client.interactions.create(
-    model="gemini-3.8-flash",
-    input= prompt
-)
+try:
+    client = genai.Client(
+        api_key= PARAMS_GEM["gemini_api_key"],
+        http_options= types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=2,
+                attempts=3,
+                http_status_codes=[429, 500, 502, 503, 504],
+            )
+        ),
+    )
+    interaction = client.interactions.create(
+        model="gemini-3.8-flash",
+        input= prompt
+    )
+except:
+    except Exception as e:
+    print(f"An error occurred: {e}")
 completion = interaction.output_text
 print(completion)
 
