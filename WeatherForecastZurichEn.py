@@ -39,8 +39,9 @@ try:
         api_key= PARAMS_GEM["gemini_api_key"],
         http_options= types.HttpOptions(
             retry_options=types.HttpRetryOptions(
-                initial_delay=5,
-                attempts=5,
+                initial_delay=2.0,
+                attempts=4,
+                backoff_multiplier=2.0,
                 http_status_codes=[429, 500, 502, 503, 504],
             )
         ),
