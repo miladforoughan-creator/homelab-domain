@@ -52,8 +52,8 @@ interaction = client.interactions.create(
 )
 completion = interaction.output_text
 print(completion)
-except Exception as e:
-    print(f"An error occurred: {e}")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
     
 sender_email = os.environ.get("EMAIL")
 app_password = os.environ.get("PASSWORD")
