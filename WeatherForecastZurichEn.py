@@ -40,7 +40,6 @@ client = genai.Client(
         retry_options=types.HttpRetryOptions(
             initial_delay=2,
             attempts=3,
-            backoff_factor=2,
             http_status_codes=[429, 500, 502, 503, 504],
         )
     ),
