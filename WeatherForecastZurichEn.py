@@ -35,7 +35,7 @@ prompt = (f"Use weather data available in {weather_data} and generate a short cl
           f"embed that graphic into the html reponse to improve the visuals of the message.")
 # client = genai.Client(api_key=PARAMS_GEM["gemini_api_key"])
 client = genai.Client(
-    api_key= PARAMS["gemini_api_key"],
+    api_key= PARAMS_GEM["gemini_api_key"],
     http_options= types.HttpOptions(
         retry_options=types.RetryOptions(
             initial_delay=2,
