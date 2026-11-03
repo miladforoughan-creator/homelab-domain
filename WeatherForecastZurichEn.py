@@ -3,6 +3,7 @@ import os
 import smtplib
 import requests
 from google import genai
+from google.genai import types
 from email.message import EmailMessage
 
 
