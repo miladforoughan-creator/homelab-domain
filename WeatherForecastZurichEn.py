@@ -41,7 +41,7 @@ try:
             retry_options=types.HttpRetryOptions(
                 initial_delay=2.0,
                 attempts=4,
-                exp_base=2.0,
+                # exp_base=2.0,
                 http_status_codes=[429, 500, 502, 503, 504],
             )
         ),
