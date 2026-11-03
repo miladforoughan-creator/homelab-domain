@@ -49,11 +49,11 @@ try:
         model="gemini-3.8-flash",
         input= prompt
     )
+    completion = interaction.output_text
+    print(completion)
 except Exception as e:
     print(f"An error occurred: {e}")
-completion = interaction.output_text
-print(completion)
-
+    
 sender_email = os.environ.get("EMAIL")
 app_password = os.environ.get("PASSWORD")
 recipients = [RECIPIENT1, RECIPIENT2]
