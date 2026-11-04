@@ -29,7 +29,7 @@ description = response.json()["list"][0]["weather"][0]["description"]
 prompt = gemini_input
 client = genai.Client(api_key= PARAMS["gemini_api_key"])
 interaction = client.interactions.create(
-    model="gemini-3.8-flash",
+    model="gemini-3.6-flash",
     input= prompt
 )
 completion = interaction.output_text
