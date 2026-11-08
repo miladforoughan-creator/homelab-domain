@@ -4,15 +4,15 @@ import json
 # from dotenv import load_dotenv
 # load_dotenv()
 
-TOKEN = os.environ.get("TOKEN")
+SHEETY_TOKEN = os.environ.get("SHEETY_TOKEN")
 bearer_headers = {
-"Authorization": f"Bearer {TOKEN}",
+"Authorization": f"Bearer {SHEETY_TOKEN}",
 }
 
 sheety_endpoint = "https://api.sheety.co/938b7f92e00f05078c980ef49b560c3f/100DaysOfPython"
 class FoodBot:
     def __init__(self, sheet_name="foodForm"):
-        self._api_key = TOKEN
+        self._api_key = SHEETY_TOKEN
         self._sheety_endpoint = f"{sheety_endpoint}/{sheet_name}"
         self._headers = bearer_headers
         self.sheet_data = {}
