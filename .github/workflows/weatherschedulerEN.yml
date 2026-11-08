@@ -37,6 +37,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -U google-genai
+          working-directory: Weather Forecast with Gemini
           pip install -r requirements.txt
 
 
@@ -50,4 +51,5 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RECIPIENT1: ${{ vars.RECIPIENT1 }}
           RECIPIENT2: ${{ vars.RECIPIENT2 }}
+        working-directory: Weather Forecast with Gemini
         run: python WeatherForecastZurichEn.py
