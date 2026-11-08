@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+RECIPIENT1 = os.environ.get("RECIPIENT1)
+RECIPIENT2 = os.environ.get("RECIPIENT2)
+
 food_bot = FoodBot()
 food_bot_data = food_bot.get_sheet_data()
 print(food_bot_data)
@@ -25,7 +28,7 @@ gemini = GeminiManager(35000, 1,1, models=["gemini-3.6-flash"])
 gemini_response = gemini.generate_response(prompt)
 
 email = EmailManager()
-recipient = ["milad.foroughan@gmail.com", "naz.rahnama@gmail.com"]
+recipient = [RECIPIENT1, RECIPIENT2]
 subject = "Food Recommendation"
 html_content = gemini_response
 email.send_email(recipient,
