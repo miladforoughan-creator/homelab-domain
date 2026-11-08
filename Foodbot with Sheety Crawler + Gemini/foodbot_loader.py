@@ -6,7 +6,7 @@ import json
 
 TOKEN = os.environ.get("TOKEN")
 bearer_headers = {
-"Authorization": f"Bearer {os.environ.get("TOKEN")}",
+"Authorization": f"Bearer {TOKEN}",
 }
 
 sheety_endpoint = "https://api.sheety.co/938b7f92e00f05078c980ef49b560c3f/100DaysOfPython"
