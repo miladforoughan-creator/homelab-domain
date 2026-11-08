@@ -1,10 +1,12 @@
 import os
 import smtplib
 from email.message import EmailMessage
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
+EMAIL = os.environ.get("EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
 
 class EmailManager:
     SMTP_HOST = "smtp.gmail.com"
@@ -12,8 +14,8 @@ class EmailManager:
 
     def __init__(self):
         # Credentials loaded once as internal configuration constants
-        self._sender_email = os.getenv("SENDER_EMAIL")
-        self._app_password = os.getenv("APP_PASSWORD")
+        self._sender_email = EMAIL
+        self._app_password = PASSWORD
         if not self._sender_email or not self._app_password:
             raise ValueError("Email credentials ('sender_email' or 'app_password') not found in environment.")
 
